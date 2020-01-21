@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import no.hvl.dat110.TODO;
+
 public class MessagingServer {
 
 	private ServerSocket welcomeSocket;
@@ -30,7 +32,7 @@ public class MessagingServer {
 		// accept TCP connection on welcome socket and create connection
 
 		if (true) {
-			throw new RuntimeException("not yet implemented");
+			throw new UnsupportedOperationException(TODO.method());
 		}
 
 		return connection;

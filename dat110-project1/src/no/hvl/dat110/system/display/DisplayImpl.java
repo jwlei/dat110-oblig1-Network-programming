@@ -1,5 +1,6 @@
 package no.hvl.dat110.system.display;
 
+import no.hvl.dat110.TODO;
 import no.hvl.dat110.rpc.RPCImpl;
 import no.hvl.dat110.rpc.RPCUtils;
 
@@ -19,7 +20,7 @@ public class DisplayImpl implements RPCImpl {
 		// look at how this is done int he SensorImpl for the read method
 		
 		if (true) {
-			  throw new RuntimeException("not yet implemented");
+			throw new UnsupportedOperationException(TODO.method());
 		}
 		
 		return reply;

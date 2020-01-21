@@ -1,5 +1,6 @@
 package no.hvl.dat110.system.display;
 
+import no.hvl.dat110.TODO;
 import no.hvl.dat110.rpc.RPCServer;
 import no.hvl.dat110.system.controller.Common;
 
@@ -15,7 +16,7 @@ public class DisplayDevice {
 		// see how this is done for the sensor RPC server in SensorDevice
 		
 		if (true) {
-			  throw new RuntimeException("not yet implemented");
+			throw new UnsupportedOperationException(TODO.method());
 		}
 		
 		System.out.println("Display server stopping ...");

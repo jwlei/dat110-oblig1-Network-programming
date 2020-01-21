@@ -2,6 +2,8 @@ package no.hvl.dat110.messaging;
 
 import java.util.Arrays;
 
+import no.hvl.dat110.TODO;
+
 public class Message {
 
 	private byte[] payload;
@@ -20,15 +22,14 @@ public class Message {
 
 	public byte[] encapsulate() {
 		
-		byte[] encoded;
+		byte[] encoded = null;
 		
 		// TODO
 		// encapulate/encode the payload of the message
 		
-		if (true) {
-		   throw new RuntimeException("not yet implemented");
-		}
-		
+		if (true)
+		   throw new UnsupportedOperationException(TODO.method());
+
 		return encoded;
 		
 	}
@@ -36,9 +37,10 @@ public class Message {
 	public void decapsulate(byte[] received) {
 
 		// TODO
-		// decapsulate data in received and put in payload
+		// decapsulate the data contained in received and store it 
+		// in the payload of this message
 		
-	   throw new RuntimeException("not yet implemented");
+		throw new UnsupportedOperationException(TODO.method());
 		
 	}
 }

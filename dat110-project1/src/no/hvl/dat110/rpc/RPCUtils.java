@@ -2,6 +2,8 @@ package no.hvl.dat110.rpc;
 
 import java.util.Arrays;
 
+import no.hvl.dat110.TODO;
+
 public class RPCUtils {
 
 	public static byte[] marshallString(byte rpcid, String str) {
@@ -11,7 +13,7 @@ public class RPCUtils {
 		// TODO: marshall RPC identifier and string into byte array
 
 		if (true) {
-			throw new RuntimeException("not yet implemented");
+			throw new UnsupportedOperationException(TODO.method());
 		}
 
 		return encoded;
@@ -24,7 +26,7 @@ public class RPCUtils {
 		// TODO: unmarshall String contained in data into decoded
 
 		if (true) {
-			throw new RuntimeException("not yet implemented");
+			throw new UnsupportedOperationException(TODO.method());
 		}
 
 		return decoded;
@@ -37,7 +39,7 @@ public class RPCUtils {
 		// TODO: marshall RPC identifier in case of void type
 
 		if (true) {
-			throw new RuntimeException("not yet implemented");
+			throw new UnsupportedOperationException(TODO.method());
 		}
 
 		return encoded;
@@ -77,7 +79,7 @@ public class RPCUtils {
 		// TODO: marshall RPC identifier and string into byte array
 
 		if (true) {
-			throw new RuntimeException("not yet implemented");
+			throw new UnsupportedOperationException(TODO.method());
 		}
 
 		return encoded;
@@ -90,7 +92,7 @@ public class RPCUtils {
 		// TODO: unmarshall integer contained in data
 
 		if (true) {
-			throw new RuntimeException("not yet implemented");
+			throw new UnsupportedOperationException(TODO.method());
 		}
 
 		return decoded;

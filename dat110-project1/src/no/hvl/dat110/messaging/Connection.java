@@ -5,6 +5,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
+import no.hvl.dat110.TODO;
+
 public class Connection {
 
 	private DataOutputStream outStream; // for writing bytes to the TCP connection
@@ -33,7 +35,7 @@ public class Connection {
 		// TODO
 		// encapsulate the data contained in the message and write to the output stream
 
-		throw new RuntimeException("not yet implemented");
+		throw new UnsupportedOperationException(TODO.method());
 
 	}
 

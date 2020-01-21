@@ -2,6 +2,7 @@ package no.hvl.dat110.rpc;
 
 import java.util.HashMap;
 
+import no.hvl.dat110.TODO;
 import no.hvl.dat110.messaging.Connection;
 import no.hvl.dat110.messaging.Message;
 import no.hvl.dat110.messaging.MessagingServer;
@@ -46,7 +47,7 @@ public class RPCServer {
 		   // - send back message containing RPC reply
 			
 		   if (true) {
-		     throw new RuntimeException("not yet implemented");
+			   throw new UnsupportedOperationException(TODO.method());
 		   }
 		   
 		   if (rpcid == RPCCommon.RPIDSTOP) {

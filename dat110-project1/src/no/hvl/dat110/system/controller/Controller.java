@@ -1,5 +1,6 @@
 package no.hvl.dat110.system.controller;
 
+import no.hvl.dat110.TODO;
 import no.hvl.dat110.rpc.RPCClient;
 import no.hvl.dat110.rpc.RPCServerStopStub;
 
@@ -28,7 +29,7 @@ public class Controller  {
 		// register RPC methods in the RPC layer
 		
 		if (true) {
-			  throw new RuntimeException("not yet implemented");
+			throw new UnsupportedOperationException(TODO.method());
 		}
 		
 		// register stop methods in the RPC middleware
@@ -39,7 +40,7 @@ public class Controller  {
 		// loop while reading from sensor and write to display via RPC
 		
 		if (true) {
-			  throw new RuntimeException("not yet implemented");
+			throw new UnsupportedOperationException(TODO.method());
 			}
 		
 		stopdisplay.stop();

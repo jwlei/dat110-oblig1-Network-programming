@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import java.net.Socket;
 
+import no.hvl.dat110.TODO;
+
 public class MessagingClient {
 
 	private String server;
@@ -24,7 +26,7 @@ public class MessagingClient {
 		// create TCP socket for client and connection
 
 		if (true) {
-			throw new RuntimeException("not yet implemented");
+			throw new UnsupportedOperationException(TODO.method());
 		}
 
 		return connection;

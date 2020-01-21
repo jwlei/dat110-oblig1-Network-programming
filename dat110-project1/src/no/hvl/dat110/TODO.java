@@ -1,4 +1,4 @@
-package no.hvl.dat100.todo;
+package no.hvl.dat110;
 
 public class TODO {
 
