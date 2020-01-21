@@ -1,6 +1,6 @@
 ## DAT110 - Project 1
 
-The tasks related to project will be part of the lab exercises in weeks 5-7. The first task can be completed now based on the knowledge you have gained in the lectures on the TCP/IP protocol stack and network programming using sockets. The subsequent tasks will involve topics that will be covered in the lectures in week 6 and partly in week 7.
+The tasks related to project will be part of the lab exercises in weeks 5 and 6. The first task can be completed now based on the knowledge you have gained in the lectures on the TCP/IP protocol stack and network programming using sockets. The subsequent tasks will involve topics that will be covered in the lectures in week 6 and partly in week 7.
 
 Please note that there is no lecture on Wednesday in week 5. Use instead the time to get starting on task 1 of the project.
 
@@ -10,7 +10,7 @@ The project is to be undertaken in groups of **groups of 2-3 students**.
 
 You are strongly encouraged to use the [discussion forum](https://hvl.instructure.com/courses/10943/discussion_topics/74045) in Canvas throughout the project.
 
-The project is to be handed in at the end of week 7 (see deadline in Canvas).
+The project is to be handed in at the beginning of week 7 (see deadline in Canvas).
 
 ### Overview
 
