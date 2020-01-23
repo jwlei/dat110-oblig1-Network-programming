@@ -46,7 +46,7 @@ In order for the group to use their own git-repository for the further work on t
 
 The other group members can now clone this new repository and the group can work with a shared repository as usual.
 
-### Taks 1: Messaging layer
+### Task 1: Messaging layer
 
 The messaging layer is to be implemented on top of TCP sockets and provide a service for connection-oriented, reliable, and bidirectional exchange of (short) messages carrying up to 127 bytes of data/payload.
 
