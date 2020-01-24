@@ -24,7 +24,20 @@ At the very base the communication between the three application is to be based 
 
 One **key advantage** of of RPC as an abstraction mechanism is that we can program networked application using what seems to be ordinary method calls even if the body of the method is in fact executed on a remote machine.
 
-To break the complexity of providing the RPC middleware we will implement a layered client server software architecture comprised of three layers as shown in the figure below.
+With the RPC middleware in place, the core of the controller can be implemented as the following loop:
+
+```java
+for (int i = 0; i<N;i++) {
+
+  int temp = sensor.read();
+  display.write(Integer.toString(temp));
+
+  [...]
+}
+```
+where the actual reading of the temperature and writing on the display takes place in a different application via the RPC middleware.
+
+To break up the complexity of providing the RPC middleware we will implement a layered client-server software architecture comprised of three layers as shown in the figure below.
 
 ![](assets/markdown-img-paste-20200124152521421.png)
 
