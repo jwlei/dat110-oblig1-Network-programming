@@ -24,15 +24,15 @@ public class Controller  {
 		sensorclient = new RPCClient(Common.SENSORHOST,Common.SENSORPORT);
 		
 		// TODO
-		// create display and sensor object
-		// create RPC clients for display device and sensor device
-		// register RPC methods in the RPC layer
+		// connect to sensor and display RPC servers
+		// create local display and sensor objects
+		// register display and sensor objects in the RPC layer
 		
 		if (true) {
 			throw new UnsupportedOperationException(TODO.method());
 		}
 		
-		// register stop methods in the RPC middleware
+		// register stop methods in the RPC layer
 		displayclient.register(stopdisplay);
 		sensorclient.register(stopsensor);
 		
