@@ -44,7 +44,7 @@ which contains an Eclipse-project with start-code. In addition, you should also 
 
 https://github.com/selabhvl/dat110-project1-testing
 
-which contains a number of unit tests that can be used for some basic testing of the implemented functionality.
+which contains a number of unit tests that can be used for some basic testing of the implemented functionality. These tests are by no means complete, and when running the test you should also check in the Eclipse console that no exception are raised when running the tests.
 
 It should not be necessary to add additional classes in order to complete the project and the unit-tests should not be modified/removed as they will be used for evaluation of the submitted solution.
 
