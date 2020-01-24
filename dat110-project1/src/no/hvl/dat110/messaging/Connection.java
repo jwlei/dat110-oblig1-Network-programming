@@ -9,8 +9,8 @@ import no.hvl.dat110.TODO;
 
 public class Connection {
 
-	private DataOutputStream outStream; // for writing bytes to the TCP connection
-	private DataInputStream inStream; // for reading bytes from the TCP connection
+	private DataOutputStream outStream; // for writing bytes to the underlying TCP connection
+	private DataInputStream inStream; // for reading bytes from the underlying TCP connection
 	private Socket socket; // socket for the underlying TCP connection
 
 	public Connection(Socket socket) {
@@ -34,7 +34,7 @@ public class Connection {
 
 		// TODO
 		// encapsulate the data contained in the message and write to the output stream
-
+		// Hint: use the encapsulate method on the message
 		throw new UnsupportedOperationException(TODO.method());
 
 	}
@@ -45,8 +45,9 @@ public class Connection {
 		byte[] recvbuf;
 
 		// TODO
-		// read a segment from the input stream and decapsulate into message
-
+		// read a segment (128 bytes) from the input stream and decapsulate into message
+		// Hint: create a new Message object and use the decapsulate method
+		
 		if (true) {
 			throw new RuntimeException("not yet implemented");
 		}

@@ -29,7 +29,7 @@ public class MessagingServer {
 		Connection connection = null;
 
 		// TODO
-		// accept TCP connection on welcome socket and create connection
+		// accept TCP connection on welcome socket and create messaging connection
 
 		if (true) {
 			throw new UnsupportedOperationException(TODO.method());

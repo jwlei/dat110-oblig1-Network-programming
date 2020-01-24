@@ -25,7 +25,8 @@ public class Message {
 		byte[] encoded = null;
 		
 		// TODO
-		// encapulate/encode the payload of the message
+		// encapulate/encode the payload of this message in the
+		// encoded byte array according to message format
 		
 		if (true)
 		   throw new UnsupportedOperationException(TODO.method());
@@ -37,7 +38,7 @@ public class Message {
 	public void decapsulate(byte[] received) {
 
 		// TODO
-		// decapsulate the data contained in received and store it 
+		// decapsulate the data contained in the received byte array and store it 
 		// in the payload of this message
 		
 		throw new UnsupportedOperationException(TODO.method());
