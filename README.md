@@ -1,8 +1,8 @@
-## DAT110 - Project 1
+## DAT110 - Project 1: Socket Programming and RPC middleware
 
-The tasks related to project will be part of the lab exercises in weeks 5 and 6. The first task can be completed now based on the knowledge you have gained in the lectures on the TCP/IP protocol stack and network programming using sockets. The subsequent tasks will involve topics that will be covered in the lectures in week 6 and partly in week 7.
+The tasks related to project will be part of the lab exercises in weeks 5 and 6. The first task can be completed now based on the knowledge you have gained in the lectures on the TCP/IP protocol stack and network programming using sockets. The subsequent tasks will involve topics that will be covered in the lectures in week 6.
 
-Please note that there is no lecture on Wednesday in week 5. Use instead the time to get starting on task 1 of the project.
+Please note that there is no lecture on Wednesday in week 5. Use instead the time to get a head start on task 1 of the project.
 
 ### Organisation
 
@@ -16,11 +16,23 @@ The project is to be handed in at the beginning of week 7 (see deadline in Canva
 
 The project builds on socket programming and network applications and aims to consolidate important concepts in the course: layering, services, protocols, headers, encapsulation/decapsulation, remote procedure calls (RPC), and marshalling/unmarshalling of parameters.
 
-The project is comprised of three main tasks
+The goal of the project is to implement a small IoT system consisting of a temperature sensor application, a controller application, and a display application. The controller is to request the current temperature from the temperature sensor and then request the display to show the temperature. The overall system is illustrated in the figure below.
+
+![](assets/markdown-img-paste-20200124152600673.png)
+
+At the very base the communication between the three application is to be based on the TCP transport service using sockets, but for programming convenience we want to implement the application using a distributed systems middleware abstraction called remote procedure calls (RPC).
+
+One **key advantage** of of RPC as an abstraction mechanism is that we can program networked application using what seems to be ordinary method calls even if the body of the method is in fact executed on a remote machine.
+
+To break the complexity of providing the RPC middleware we will implement a layered client server software architecture comprised of three layers as shown in the figure below.
+
+![](assets/markdown-img-paste-20200124152521421.png)
+
+This in turn means that the project is comprised of three main tasks
 
 1. Implementation of a messaging layer on top of TCP sockets for exchanging short messages between a messaging client and a messaging server
-- Implementation of a light-weight RPC layer and distributed systems middleware on top of the messaging layer
-- Application of the RPC layer for realising an small IoT network application comprised of a sensor, and display, and a controller
+2. Implementation of a light-weight RPC layer and distributed systems middleware on top of the messaging layer
+3. Application of the RPC layer for realising an small IoT network application comprised of a sensor, and display, and a controller
 
 ### Getting Started
 
@@ -48,11 +60,15 @@ The other group members can now clone this new repository and the group can work
 
 ### Task 1: Messaging layer
 
-The messaging layer is to be implemented on top of TCP sockets and provide a service for connection-oriented, reliable, and bidirectional exchange of (short) messages carrying up to 127 bytes of data/payload.
+The messaging layer is to be implemented on top of TCP sockets and provide a service for connection-oriented, reliable, and bidirectional exchange of (short) messages carrying up to 127 bytes of data/payload. The messaging layer is to be based on a client-server architecture supporting a client in establishing a connection to a server on top of which the messages can be exchanged.
 
-The messaging layer is to be based on a client-server architecture supporting a client in establishing a connection to a server on top of which the messages can be exchanged.
+This is illustrated in the figure below which shows the messaging layer connection for exchange of messages on top of the TCP connection supporting a bidirectional bytestream. The boxes between the transport and messaging layers represents TCP sockets.
 
-The messaging protocol is based on sending fixed-sized segments of 128 bytes on the underlying TCP connection such that the first byte of the segment is to be interpreted as an integer in the range 0..127 specifying how many of the subsequent 127 bytes is payload data. Any remaining bytes is simply considered to be padding and can be ignored.
+![](assets/markdown-img-paste-20200124152450204.png)
+
+The messaging protocol is based on sending fixed-sized segments of 128 bytes on the underlying TCP connection such that the first byte of the segment is to be interpreted as an integer in the range 0..127 specifying how many of the subsequent 127 bytes is payload data. Any remaining bytes is simply considered to be padding and can be ignored. The figure below shows the syntax of the message format to be used in the messaging layer.
+
+![](assets/markdown-img-paste-20200124152430675.png)
 
 The implementation of the messaging service is to be located in the `no.hvl.dat110.messaging` package.
 
@@ -72,13 +88,23 @@ Unit-tests for the messaging layer can be found in the `no.hvl.dat110.messaging.
 
 ### Task 2: RPC layer
 
-The description of this task assumes that you have read Chap. 4.2 (Remote Procedure Call) in the distributed systems book.
-
 In this task you will implement a light-weight RPC middleware on top of the messaging layer. The RPC layer is also based on a client-server architecture in which the client-side is able to perform remote procedure calls on objects located on the server-side.
+
+The basic idea of RPC is that a process can execute method (procedure) calls on remote objects residing inside other processes. The basic idea is illustrated in the figure below in which a client invokes a method on a local-object (also called a stub/proxy) object while actual execution of the body of the method takes place in the remote object located on another machine.
+
+![](assets/markdown-img-paste-20200124152725863.png)
+
+The RPC client middleware marshalles the parameters of the method into an request message which is then sent to the RPC server middleware. The RPC server middleware then inspects the request and executes the method being called. As the last step it marshall the return value and sends it back to the RPC client middleware which can then return the result of the remote method call.  
+
+A detailed description of remote procedure calls can be found in Chap. 4.2 of the distributed systems book.
 
 The RPC middleware is light-weight in that only the types `void`, `String`, `int`, and `boolean` is supported as parameter and return types, and the methods supported can have at most one parameter. Furthermore, the middleware does not support automatic generation of stub code and the marshalling and unmarshalling of parameters and return values. The (un)marshalling will have to be implemented manually by the developer using the RPC middleware. Finally, it is assumed that the marshalled parameter and return values can be represented using at most 127 bytes.
 
 To perform a call, the client-side stub must send a request message containing first a byte specifying the identifier of the remote procedure call to be invoked on the server-side. The subsequent bytes in the request is then a sequence of bytes resulting from the marshalling representing the parameter (if any). When receiving the request, the server-side uses the identifier to perform a look-up in a table to find the correct RPC method to invoke. Before invoking the method, the parameter (if any) must be unmarshalled on the server-side. After having invoked the method, any return value must be marshalled and then sent back to the client-side in a reply message where the first byte (again) specifies the executed method. Finally, the client-side have to unmarshall the return value (if any).
+
+The format of the request message (which method and parameters) and response message (return value) is shown in the figure below.
+
+![](assets/markdown-img-paste-20200124154447804.png)
 
 The implementation of the RPC layer is to be located in the `no.hvl.dat110.rpc` package. You are required to provide the missing method implementations in the following classes
 
@@ -98,7 +124,7 @@ In addition to the three classes above, the RPC layer contains the following
 
 - `RPCServerStopImpl.java` implementing the server-side of a remote method `void stop()` which the client-side can use to terminate the server. The class illustrates the server-side implementation of an RPC method and how first parameters must be unmarshalled, then the underlying method called, and then the marshalling of the return value.
 
-- `RPCServerStopStub.java` implementing the client-side stub of the remote method `void stop()`. The class illustrates the client-side implementation of an RPC method illustrating how first parameters are marshalled, then the RPC layer is asked to execute the call, and finally the return must be unmarshalled.
+- `RPCServerStopStub.java` implementing the client-side stub of the remote method `void stop()`. The class illustrates the client-side implementation of an RPC method showing how first parameters are marshalled, then the RPC layer is asked to execute the call, and finally the return must be unmarshalled.
 
 The `void stop()` method uses RPC identifier 0 and this (reserved) identifier should not be used when implementing other RPC methods using the RPC layer.
 
@@ -106,9 +132,11 @@ The `void stop()` method uses RPC identifier 0 and this (reserved) identifier sh
 
 ### Task 3: Using the RPC layer for an IoT network application
 
-In this task you will use the RPC layer to implement a small IoT system comprised of a controller, a (temperature) sensor, and a display. The controller should play the role of an RPC client while the sensor and display plays the role of RPC servers.
+In this task you will use the RPC layer to implement the IoT system comprised of a controller, a (temperature) sensor, and a display. The controller should play the role of an RPC client while the sensor and display plays the role of RPC servers.
 
-The controller should regularly retrieve the current temperature using a `int read()` RPC call on the sensor and then use a `void write(String str)` RPC call on the display the current temperature.
+The controller should regularly retrieve the current temperature using a `int read()` RPC call on the sensor and then use a `void write(String str)` RPC call on the display the current temperature. The principle is illustrated in the figure below.
+
+![](assets/markdown-img-paste-20200124154533252.png)
 
 #### Controller implementation
 
@@ -118,7 +146,7 @@ The implementation of the controller is to be provided in the `no.dat110.system.
 
 - `Sensor.java` - here you have to implement the client-side stub for the `int read()` RPC method.
 
-- `Controller.java` - here you have to implement the creation of the client-side stubs and the registration of the stubs in the middleware. Finally, the controller must connect to the sensor and display RPC servers and implement a bounded-loop in which the temperature is retrieved from the sensor and shown on the display.
+- `Controller.java` - here you have to implement the creation of the client-side stubs and the registration of the stubs in the middleware. Finally, the controller must connect to the sensor and display RPC servers and implement a bounded-loop in which the temperature is retrieved from the sensor (using the read method) and shown on the display (usint the write method).
 
 #### Display implementation
 
