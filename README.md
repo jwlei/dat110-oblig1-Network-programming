@@ -141,7 +141,7 @@ In addition to the three classes above, the RPC layer contains the following
 
 The `void stop()` method uses RPC identifier 0 and this (reserved) identifier should not be used when implementing other RPC methods using the RPC layer.
 
-** Optional challenges: ** If you have time, you may consider implement an RPC layer where methods can have more than a single parameter. Also, you may investigate how to implement the automatic generation of the client-side and server-side stub-code which would be a first step towards supporting arbitrary Java-objects as parameter and return types. Finally, you may consider making the RPC server multi-threaded such that multiple simultaneous clients can be handled.
+**Optional challenges:** If you have time, you may consider implement an RPC layer where methods can have more than a single parameter. Also, you may investigate how to implement the automatic generation of the client-side and server-side stub-code which would be a first step towards supporting arbitrary Java-objects as parameter and return types. Finally, you may consider making the RPC server multi-threaded such that multiple simultaneous clients can be handled.
 
 ### Task 3: Using the RPC layer for an IoT network application
 
