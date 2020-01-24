@@ -1,13 +1,13 @@
 package no.hvl.dat110.rpc;
 
-// client-side stubs must extend this class
+// client-side stubs (local objects) must extend this class
 
 public abstract class RPCStub {
 
-	protected RPCClient rmiclient;
+	protected RPCClient rpcclient;
 	
 	public void register(RPCClient rmiclient) {
-		this.rmiclient = rmiclient;
+		this.rpcclient = rmiclient;
 	}
 	
 }

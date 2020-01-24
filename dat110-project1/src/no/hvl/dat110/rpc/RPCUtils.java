@@ -6,6 +6,11 @@ import no.hvl.dat110.TODO;
 
 public class RPCUtils {
 
+	// Utility methods for marshalling and marshalling of parameters and return values
+	// in RPC request and RPC responses
+	// data bytearrays and return byte arrays is according to the 
+	// RPC message syntax [rpcid,parameter/return value]
+	
 	public static byte[] marshallString(byte rpcid, String str) {
 
 		byte[] encoded;

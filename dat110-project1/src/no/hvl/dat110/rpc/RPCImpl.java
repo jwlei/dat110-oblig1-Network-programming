@@ -1,6 +1,6 @@
 package no.hvl.dat110.rpc;
 
-// server-side stubs must implement this interface
+// server-side (remote objects) must implement this interface
 
 public interface RPCImpl {
 	

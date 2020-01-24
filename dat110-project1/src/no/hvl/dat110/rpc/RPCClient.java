@@ -39,8 +39,8 @@ public class RPCClient {
 		
 		/* TODO: 
 		
-		Make a remote call on the RPC server by sending a request message
-		and receive a reply message
+		Make a remote call on the RPC server by sending the RPC request message
+		and receive an RPC reply message
 		
 		rpcrequest is the marshalled rpcrequest from the client-stub
 		rpctreply is the rpcreply to be unmarshalled by the client-stub

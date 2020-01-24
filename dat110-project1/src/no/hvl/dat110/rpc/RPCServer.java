@@ -42,7 +42,7 @@ public class RPCServer {
 		   // TODO
 		   // - receive message containing RPC request
 		   // - find the identifier for the RPC methods to invoke
-		   // - lookup the methods to be invoked
+		   // - lookup the method to be invoked
 		   // - invoke the method
 		   // - send back message containing RPC reply
 			
@@ -57,8 +57,8 @@ public class RPCServer {
 	
 	}
 	
-	public void register(int rmid, RPCImpl impl) {
-		services.put(rmid, impl);
+	public void register(int rpcid, RPCImpl impl) {
+		services.put(rpcid, impl);
 	}
 	
 	public void stop() {
