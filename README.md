@@ -18,7 +18,7 @@ The project builds on socket programming and network applications and aims to co
 
 The goal of the project is to implement a small IoT system consisting of a temperature sensor application, a controller application, and a display application. The controller is to request the current temperature from the temperature sensor and then request the display to show the temperature. The overall system is illustrated in the figure below.
 
-![](assets/markdown-img-paste-20200124152600673.png)
+![](assets/markdown-img-paste-20200124152600673.jpg)
 
 At the very base the communication between the three application is to be based on the TCP transport service using sockets, but for programming convenience we want to implement the application using a distributed systems middleware abstraction called remote procedure calls (RPC).
 
@@ -39,7 +39,7 @@ where the actual reading of the temperature and writing on the display takes pla
 
 To break up the complexity of providing the RPC middleware we will implement a layered client-server software architecture comprised of three layers as shown in the figure below.
 
-![](assets/markdown-img-paste-20200124152521421.png)
+![](assets/markdown-img-paste-20200124152521421.jpg)
 
 This in turn means that the project is comprised of three main tasks
 
@@ -77,11 +77,11 @@ The messaging layer is to be implemented on top of TCP sockets and provide a ser
 
 This is illustrated in the figure below which shows the messaging layer connection for exchange of messages on top of the TCP connection supporting a bidirectional bytestream. The boxes between the transport and messaging layers represents TCP sockets.
 
-![](assets/markdown-img-paste-20200124152450204.png)
+![](assets/markdown-img-paste-20200124152450204.jpg)
 
 The messaging protocol is based on sending fixed-sized segments of 128 bytes on the underlying TCP connection such that the first byte of the segment is to be interpreted as an integer in the range 0..127 specifying how many of the subsequent 127 bytes is payload data. Any remaining bytes is simply considered to be padding and can be ignored. The figure below shows the syntax of the message format to be used in the messaging layer.
 
-![](assets/markdown-img-paste-20200124152430675.png)
+![](assets/markdown-img-paste-20200124152430675.jpg)
 
 The implementation of the messaging service is to be located in the `no.hvl.dat110.messaging` package.
 
@@ -105,7 +105,7 @@ In this task you will implement a light-weight RPC middleware on top of the mess
 
 The basic idea of RPC is that a process can execute method (procedure) calls on remote objects residing inside other processes. The basic idea is illustrated in the figure below in which a client invokes a method on a local-object (also called a stub/proxy) object while actual execution of the body of the method takes place in the remote object located on another machine.
 
-![](assets/markdown-img-paste-20200124152725863.png)
+![](assets/markdown-img-paste-20200124152725863.jpg)
 
 The RPC client middleware marshalles the parameters of the method into an request message which is then sent to the RPC server middleware. The RPC server middleware then inspects the request and executes the method being called. As the last step it marshall the return value and sends it back to the RPC client middleware which can then return the result of the remote method call.  
 
@@ -117,7 +117,7 @@ To perform a call, the client-side stub must send a request message containing f
 
 The format of the request message (which method and parameters) and response message (return value) is shown in the figure below.
 
-![](assets/markdown-img-paste-20200124154447804.png)
+![](assets/markdown-img-paste-20200124154447804.jpg)
 
 The implementation of the RPC layer is to be located in the `no.hvl.dat110.rpc` package. You are required to provide the missing method implementations in the following classes
 
@@ -149,7 +149,7 @@ In this task you will use the RPC layer to implement the IoT system comprised of
 
 The controller should regularly retrieve the current temperature using a `int read()` RPC call on the sensor and then use a `void write(String str)` RPC call on the display the current temperature. The principle is illustrated in the figure below.
 
-![](assets/markdown-img-paste-20200124154533252.png)
+![](assets/markdown-img-paste-20200124154533252.jpg)
 
 #### Controller implementation
 
