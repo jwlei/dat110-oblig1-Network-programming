@@ -6,7 +6,7 @@ Please note that there is no lecture on Wednesday in week 5. Use the time to get
 
 ### Organisation
 
-The project is to be undertaken in **groups of 2-3 students**.
+The project is to be undertaken in **groups of 2-4 students**.
 
 You are strongly encouraged to use the [discussion forum](https://hvl.instructure.com/courses/10943/discussion_topics/74045) in Canvas throughout the project if you encounter issues or have questions related to the project.
 
