@@ -167,7 +167,7 @@ The implementation of the display is in the `no.hvl.dat110.system.display` packa
 
 The implementation of the sensor is in the `no.hvl.dat110.system.sensor` package and can be used as inspiration for the implementation of the display.
 
-If everything has been implemented correctly, you should not be able to start the display-device and sensor-device, and then the controller and see the reporting temperatures in the console. The test in `TestSystem.java` contains a test that runs all devices within the same JVM using threads. You can run the devices in separate JVMs by running the individual devices as a Java application (they each have a main method).
+If everything has been implemented correctly, you should now be able to start the display-device and sensor-device, and then the controller and see the reporting temperatures in the console. The test in `TestSystem.java` contains a test that runs all devices within the same JVM using threads. You can run the devices in separate JVMs by running the individual devices as a Java application (they each have a main method).
 
 ### Handing in the project
 
