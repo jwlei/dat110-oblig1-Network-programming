@@ -167,7 +167,31 @@ The implementation of the display is in the `no.hvl.dat110.system.display` packa
 
 The implementation of the sensor is in the `no.hvl.dat110.system.sensor` package and can be used as inspiration for the implementation of the display.
 
-If everything has been implemented correctly, you should now be able to start the display-device and sensor-device, and then the controller and see the reporting temperatures in the console. The test in `TestSystem.java` contains a test that runs all devices within the same JVM using threads. You can run the devices in separate JVMs by running the individual devices as a Java application (they each have a main method).
+#### Testing the IoT System
+
+If everything has been implemented correctly, you should now be able to start the display-device and sensor-device, and then the controller and see the reporting temperatures in the console.
+
+The test in `TestSystem.java` contains a test that runs all devices within the same JVM using threads. Please **note** that the test only start the different processes you need to check the *Console* window to see if the system is working properly. If everything iw working propoerly the *Console* should contain an output similar to:
+
+```
+Display server starting ...
+Sensor server starting ...
+Controller starting ...
+DISPLAY:17
+DISPLAY:19
+DISPLAY:5
+DISPLAY:-14
+DISPLAY:-19
+RPC server executing stop
+Controller stopping ...
+Display server stopping ...
+Sensor server stopping ...
+System stopping ...
+```
+
+and no exceptions raised.
+
+You can run the devices in separate JVMs by running the individual devices as a Java application (they each have a main method).
 
 ### Handing in the project
 
