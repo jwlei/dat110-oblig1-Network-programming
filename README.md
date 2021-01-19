@@ -1,22 +1,20 @@
 ## DAT110 - Project 1: Socket Programming and RPC middleware
 
-The tasks related to this project will be part of the lab exercises in weeks 5 and 6. The first task can be completed now based on the knowledge you have gained in the lectures on the TCP/IP protocol stack and network programming using sockets. The subsequent tasks involve topics that will be covered in the lectures in the beginning of week 6.
-
-Please note that there is no lecture on Wednesday in week 5. Use the time to get a head start on task 1 and 2 of the project.
+The tasks related to this project will be part of the lab exercises in the next two weeks.
 
 ### Organisation
 
 The project is to be undertaken in **groups of 2-4 students**.
 
-You are strongly encouraged to use the [discussion forum](https://hvl.instructure.com/courses/10943/discussion_topics/74045) in Canvas throughout the project if you encounter issues or have questions related to the project.
+You are strongly encouraged to use the DAT110 Discord server throughout the project if you encounter issues or have questions related to the project.
 
-The project is to be handed in at the beginning of week 7 (see deadline in Canvas).
+The deadline for handing in the project can be found in Canvas.
 
 ### Overview
 
 The project builds on socket programming and network applications and aims to consolidate important concepts in the course: layering, services, protocols, headers, encapsulation/decapsulation, remote procedure calls (RPC), and marshalling/unmarshalling.
 
-The goal of the project is to implement a small IoT system consisting of a temperature sensor application, a controller application, and a display application. The controller is to request the current temperature from the temperature sensor and then request the display to show the temperature. The overall system is illustrated below.
+The end-goal of the project is to implement a small IoT system consisting of a temperature sensor application, a controller application, and a display application. The controller is to request the current temperature from the temperature sensor and then request the display to show the temperature. The overall system is illustrated below.
 
 ![](assets/markdown-img-paste-20200124152600673.jpg)
 
@@ -57,7 +55,7 @@ https://github.com/selabhvl/dat110-project1-testing
 
 which contains a number of unit tests that can be used for some basic testing of the implemented functionality. These tests are by no means complete, and when running the test you should also check in the Eclipse console that no exceptions are raised when running the tests.
 
-It should not be necessary to add additional classes in order to complete the project. The unit-tests should not be modified as they will be used for evaluation of the submitted solution.
+It should not be necessary to add additional classes in the start-code in order to complete the project. The unit-tests should not be modified as they will be used for evaluation of the submitted solution.
 
 In order for the group to use their own git-repository for the further work on the codebase, one member of the group must create an empty repository on github/bitbucket without a README file and without a `.gitignore` file, and then perform the following operations
 
@@ -103,7 +101,7 @@ Unit-tests for the messaging layer can be found in the `no.hvl.dat110.messaging.
 
 In this task you will implement a light-weight RPC middleware on top of the messaging layer. The RPC layer is also based on a client-server architecture in which the client-side is able to perform remote procedure calls on objects located on the server-side.
 
-The basic idea of RPC is that a process can execute method (procedure) calls over the network on remote objects residing inside other processes. This is illustrated in the figure below in which a client invokes a method on a local-object (also called a stub/proxy) object while actual execution of the body of the method takes place in the remote object located on another machine and implementing the actual functionality of the method
+The basic idea of RPC is that a process can execute method (procedure) calls over the network on remote objects residing inside other processes. This is illustrated in the figure below in which a client invokes a method on a local-object (also called a stub/proxy) object while actual execution of the body of the method takes place in the remote object located on another machine and implementing the actual functionality of the method.
 
 ![](assets/markdown-img-paste-20200124152725863.jpg)
 
@@ -171,7 +169,7 @@ The implementation of the sensor is in the `no.hvl.dat110.system.sensor` package
 
 If everything has been implemented correctly, you should now be able to start the display-device and sensor-device, and then the controller and see the reporting temperatures in the console.
 
-The test in `TestSystem.java` contains a test that runs all devices within the same JVM using threads. Please **note** that the test only start the different processes you need to check the *Console* window to see if the system is working properly. If everything iw working propoerly the *Console* should contain an output similar to:
+The test in `TestSystem.java` contains a test that runs all devices within the same JVM using threads. Please **note** that the test only start the different processes you need to check the *Console* window to see if the system is working properly. If everything is working properly, the *Console* should contain an output similar to:
 
 ```
 Display server starting ...
@@ -195,6 +193,6 @@ You can run the individual devices and the controller in separate JVMs by starti
 
 ### Handing in the project
 
-Each group must hand in a link on Canvas to a git-repository containing their implementation.
+Each group must hand in a link on Canvas to a git-repository containing their implementation and a screen-shot showing the result of running all the unit-tests.
 
 Please remember to hand-in as a member of a group in Canvas: https://hvl365-my.sharepoint.com/:w:/g/personal/akv_hvl_no/EdkQXNKVjmhPrHNtD3n5r74B6KSb7DwmVYf9MA3SIUA4Sw?e=hC5Q9i
