@@ -45,6 +45,12 @@ This in turn means that the project is comprised of three main tasks
 
 ### Getting Started
 
+The start-code and code containing unit tests is available via git.
+
+There is a page on Canvas (from the DAT100 course) which revisits the most important git operations (for those that fell a bit rusty on git)
+
+https://hvl.instructure.com/courses/15566/pages/videoer-om-bruk-av-git-fra-dat100?module_item_id=348584
+
 #### Fork and Clone the start-code repository
 
 One member of the group should start by entering the following repository on github:
