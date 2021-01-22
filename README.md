@@ -45,27 +45,29 @@ This in turn means that the project is comprised of three main tasks
 
 ### Getting Started
 
-You should start by cloning the Java start-code to be found in the github repository at
+#### Fork and Clone the start-code repository
+
+One member of the group should start by entering the following repository on github:
 
 https://github.com/selabhvl/dat110-project1-startcode.git
 
-containing an Eclipse-project with start-code. In addition, you should also clone the following project:
+and then do a *Fork* of the repository (see button in the upper right of the repository web page).
+
+This will create a "copy" of the start-code repository on the group members own github repository account.
+
+In order for the other group members to work together on the forked copy of the start-code, the other group members must be provided with access to read/write on the forked repository. See *Settings* and *Manage Access* for the repository.
+
+All group members should clone the forked repository which can now be used as a repository for collaborating on the code.
+
+#### Clone the start-code repository
+
+In addition, each group member should clone (but not fork) the following project:
 
 https://github.com/selabhvl/dat110-project1-testing
 
 which contains a number of unit tests that can be used for some basic testing of the implemented functionality. These tests are by no means complete, and when running the test you should also check in the Eclipse console that no exceptions are raised when running the tests.
 
 It should not be necessary to add additional classes in the start-code in order to complete the project. The unit-tests should not be modified as they will be used for evaluation of the submitted solution.
-
-In order for the group to use their own git-repository for the further work on the codebase, one member of the group must create an empty repository on github/bitbucket without a README file and without a `.gitignore` file, and then perform the following operations
-
-`git remote remove origin`
-
-`git remote add origin <url-to-the-new-empty-repository>`
-
-`git push -u origin master`
-
-The other group members can now clone this new repository and the group can work with a shared repository as usual.
 
 ### Task 1: Messaging layer
 
