@@ -31,6 +31,8 @@ public class Connection {
 		// sindre testy
 	}
 
+	// Fred testy test
+
 	public void send(Message message) {
 
 		// TODO

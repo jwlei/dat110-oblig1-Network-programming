@@ -8,7 +8,7 @@ public class TODO {
 		
 		return "Metoden " + methodName + " er ikke implementert";
 	}
-	
+	//test
 	
 	public static String construtor(String className) {
 				
