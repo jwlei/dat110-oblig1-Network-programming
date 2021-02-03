@@ -28,10 +28,10 @@ public class Connection {
 			System.out.println("Connection: " + ex.getMessage());
 			ex.printStackTrace();
 		}
-		// sindre testy
+		
 	}
 
-	// Fred testy test
+	
 
 	public void send(Message message) {
 
