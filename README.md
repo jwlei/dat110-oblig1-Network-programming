@@ -145,6 +145,8 @@ In addition to the three classes above, the RPC layer contains the following
 
 The `void stop()` method should be considered an internal RPC method and uses RPC identifier 0. This (reserved) identifier should not be used when implementing other RPC methods using the RPC layer.
 
+The abstract class `RPCStub` will be relevant in task 3 as the client-side of an RPC-call is to extend this class such that it gets access to the RPC middleware for making remote calls. The interface `RPCImpl` is also to be used in task 3 as the server-side of an RPC call (where the remote method is actually implemented) is to implement this interface by implementing teh `invoke` method that will do the unmarshalling/marshalling of parameters/return value for the concrete remote method. 
+
 **Optional challenges:** If you have time, you may consider implementing an RPC layer where methods can have more than a single parameter. Also, you may investigate how to implement the automatic code generation of the client-side and server-side stub-code which would be a first step towards supporting arbitrary Java-objects as parameter and return types. Finally, you may consider making the RPC server multi-threaded such that multiple simultaneous clients can be handled.
 
 ### Task 3: Using the RPC layer for an IoT network application
