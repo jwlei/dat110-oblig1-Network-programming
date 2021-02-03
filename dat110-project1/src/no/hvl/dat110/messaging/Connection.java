@@ -30,6 +30,8 @@ public class Connection {
 		}
 	}
 
+	// Fred testy test
+
 	public void send(Message message) {
 
 		// TODO
