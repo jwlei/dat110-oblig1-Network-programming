@@ -28,6 +28,7 @@ public class Connection {
 			System.out.println("Connection: " + ex.getMessage());
 			ex.printStackTrace();
 		}
+		// sindre test
 	}
 
 	public void send(Message message) {
