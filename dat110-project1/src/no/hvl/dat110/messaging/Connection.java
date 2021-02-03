@@ -28,7 +28,7 @@ public class Connection {
 			System.out.println("Connection: " + ex.getMessage());
 			ex.printStackTrace();
 		}
-		// sindre test
+		// sindre testy
 	}
 
 	public void send(Message message) {
