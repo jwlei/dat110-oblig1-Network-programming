@@ -1,3 +1,39 @@
+DAT110 - Project 1 - Gruppe 23
+
+TODO / DONE
+
+Messaging layer:
+  Connection       TODO 
+  Message          TODO
+  MessageConfig    TODO
+  MessageClient    TODO
+  MessageServer    TODO
+
+RPC layer:
+  RPCclient         TODO
+  RPCCommon         TODO
+  RPCImpl           TODO
+  RPCServer         TODO
+  RPCServerSTOPimpl TODO
+  RPCServerSTOPStub TODO
+  RPCStub           TODO
+  RPCUtils          TODO
+  
+Controller:
+  Common            TODO
+  Controller        TODO
+  Display           TODO
+  Sensor            TODO
+  
+Display:
+  DisplayDevice     TODO
+  DisplayImpl       TODO
+  
+Sensor
+  SensorDevice      TODO
+  SensorImpl        TODO
+  
+
 ## DAT110 - Project 1: Socket Programming and RPC middleware
 
 The tasks related to this project will be part of the lab exercises in the next two weeks.
