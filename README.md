@@ -1,57 +1,27 @@
 DAT110 - Project 1 - Gruppe 23
+## Tests
+![](assets/testsok.png)
 
-TODO / DONE
 
+Checklist
 ## Messaging layer:
-Connection       TODO 
-
-Message          TODO
-
-MessageConfig    TODO
-
-MessageClient    TODO
-
-MessageServer    TODO
+DONE
 
 
 ## RPC layer:
-RPCclient         TODO 
-
-RPCCommon         TODO
-
-RPCImpl           TODO
-
-RPCServer         TODO 
-
-RPCServerSTOPimpl TODO
-
-RPCServerSTOPStub TODO
-
-RPCStub           TODO
-
-RPCUtils          TODO
+DONE
 
 
 ## Controller:
-Common            TODO
-
-Controller        TODO
-
-Display           TODO
-
-Sensor            TODO
+DONE
 
 
 ## Display:
-DisplayDevice     TODO
-
-DisplayImpl       TODO
+DONE
   
   
 ## Sensor
-SensorDevice      TODO
-
-SensorImpl        TODO
+DONE
   
 
 ## DAT110 - Project 1: Socket Programming and RPC middleware
