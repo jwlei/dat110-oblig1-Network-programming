@@ -30,9 +30,6 @@ public class MessagingServer {
 
 		// TODO
 		// accept TCP connection on welcome socket and create messaging connection
-
-//		if (true) {
-//			throw new UnsupportedOperationException(TODO.method());
 		
 		try {
 			Socket socket = welcomeSocket.accept();
@@ -40,9 +37,11 @@ public class MessagingServer {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		
+		//if (true) {
+		//throw new UnsupportedOperationException(TODO.method());
 		return connection;
-
+		
 	}
 
 	public void stop() {

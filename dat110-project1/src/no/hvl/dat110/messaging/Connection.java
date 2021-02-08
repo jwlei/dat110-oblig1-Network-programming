@@ -15,62 +15,53 @@ public class Connection {
 
 	public Connection(Socket socket) {
 
-		try {
 
-			this.socket = socket;
 
-			outStream = new DataOutputStream(socket.getOutputStream());
+        try {
+        	
+            this.socket = socket;
+            outStream = new DataOutputStream(socket.getOutputStream());
+            inStream = new DataInputStream(socket.getInputStream());
+        } catch (IOException ex) {
 
-			inStream = new DataInputStream(socket.getInputStream());
-
-		} catch (IOException ex) {
-
-			System.out.println("Connection: " + ex.getMessage());
-			ex.printStackTrace();
-		}
-		
-	}
-
-	//testtest123
+            System.out.println("Connection: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
 
 	public void send(Message message) {
 
-		// TODO
+		// DONE
 		// encapsulate the data contained in the message and write to the output stream
 		// Hint: use the encapsulate method on the message
 		try {
-			outStream.write(message.encapsulate());
-			outStream.flush();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+            outStream.write(message.encapsulate());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-	}
+    }
 
 	public Message receive() {
 
-		Message message = new Message();
-		byte[] recvbuf = new byte[128];
-		
-		try {
-			inStream.read(recvbuf);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		message.decapsulate(recvbuf);
+        Message message;
+        byte[] recvbuf;
 
-		// TODO
-		// read a segment (128 bytes) from the input stream and decapsulate into message
-		// Hint: create a new Message object and use the decapsulate method
-		
-		/*if (true) {
-			throw new RuntimeException("not yet implemented");
-			
-		}*/
+        // read a segment (128 bytes) from the input stream and decapsulate into message
+        // Hint: create a new Message object and use the decapsulate method
 
-		return message;
+        message = new Message();
 
-	}
+        try {
+            recvbuf = inStream.readNBytes(128);
+
+            message.decapsulate(recvbuf);
+            return message;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return message;
+    }
 
 	// close the connection by closing streams and the underlying socket
 	public void close() {
